@@ -127,3 +127,19 @@ xdg-utils
 xfsprogs
 xl2tpd
 zsh
+# --- maospix-kde: escritorio ---
+plasma-meta
+sddm
+konsole
+dolphin
+kate
+ark
+spectacle
+firefox
+networkmanager
+network-manager-applet
+pipewire
+pipewire-pulse
+wireplumber
+noto-fonts
+noto-fonts-emoji
