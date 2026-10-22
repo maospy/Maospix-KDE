@@ -128,7 +128,6 @@ xfsprogs
 xl2tpd
 zsh
 # --- maospix-kde: escritorio ---
-plasma-meta
 sddm
 konsole
 dolphin
@@ -143,3 +142,23 @@ pipewire-pulse
 wireplumber
 noto-fonts
 noto-fonts-emoji
+plasma-desktop
+plasma-nm
+plasma-pa
+powerdevil
+kscreen
+bluedevil
+kde-gtk-config
+breeze-gtk
+kinfocenter
+plasma-systemmonitor
+systemsettings
+xdg-desktop-portal-kde
+kdeplasma-addons
+plasma-firewall
+plasma-disks
+print-manager
+sddm-kcm
+drkonqi
+plasma-workspace-wallpapers
+calamares
