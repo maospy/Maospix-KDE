@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Limpia los restos del live dentro del sistema instalado (corre en chroot)
+set -e
+# archiso saca el kernel de /boot: se restaura desde /usr/lib/modules
+install -Dm644 "/usr/lib/modules/$(ls -1 /usr/lib/modules | head -n1)/vmlinuz" /boot/vmlinuz-linux
+rm -f /etc/mkinitcpio.conf.d/archiso.conf
+rm -f /etc/sddm.conf.d/autologin.conf /etc/sudoers.d/g_wheel
+rm -rf /etc/systemd/system/getty@tty1.service.d
+rm -f /etc/systemd/system/{etc-pacman.d-gnupg.mount,choose-mirror.service,pacman-init.service,livecd-talk.service,livecd-alsa-unmuter.service}
+find /etc/systemd/system -xtype l -delete
+passwd -l root
+pacman-key --init
+pacman-key --populate archlinux
