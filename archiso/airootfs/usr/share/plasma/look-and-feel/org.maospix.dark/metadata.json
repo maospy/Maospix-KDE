@@ -1,0 +1,11 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [{"Name": "Marcos Olmedo (maospytek)"}],
+        "Id": "org.maospix.dark",
+        "License": "GPL-3.0",
+        "Name": "Maospix Dark",
+        "Name[es]": "Maospix Oscuro",
+        "Description": "Maospix-KDE: tema oscuro Nord con dock flotante y barra superior"
+    }
+}

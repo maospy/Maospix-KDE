@@ -1,0 +1,37 @@
+// Maospix Dark: barra superior fina + dock flotante abajo
+
+var desktopsArray = desktopsForActivity(currentActivity());
+for (var j = 0; j < desktopsArray.length; j++) {
+    desktopsArray[j].wallpaperPlugin = 'org.kde.image';
+    desktopsArray[j].currentConfigGroup = ["Wallpaper", "org.kde.image", "General"];
+    desktopsArray[j].writeConfig("Image", "file:///usr/share/wallpapers/Maospix");
+}
+
+// --- Barra superior ---
+var top = new Panel;
+top.location = "top";
+top.height = 2 * Math.ceil(gridUnit * 1.6 / 2);
+top.floating = false;
+top.addWidget("org.kde.plasma.kickoff");
+top.addWidget("org.kde.plasma.panelspacer");
+top.addWidget("org.kde.plasma.digitalclock");
+top.addWidget("org.kde.plasma.panelspacer");
+top.addWidget("org.kde.plasma.systemmonitor.cpucore");
+top.addWidget("org.kde.plasma.systemmonitor.memory");
+top.addWidget("org.kde.plasma.systemtray");
+
+// --- Dock flotante ---
+var dock = new Panel;
+dock.location = "bottom";
+dock.height = 2 * Math.ceil(gridUnit * 3 / 2);
+dock.floating = true;
+dock.alignment = "center";
+dock.lengthMode = "fit";
+var tasks = dock.addWidget("org.kde.plasma.icontasks");
+tasks.currentConfigGroup = ["General"];
+tasks.writeConfig("launchers", [
+    "applications:org.kde.konsole.desktop",
+    "applications:org.kde.dolphin.desktop",
+    "applications:firefox.desktop",
+    "applications:systemsettings.desktop"
+]);
