@@ -11,3 +11,5 @@ find /etc/systemd/system -xtype l -delete
 passwd -l root
 pacman-key --init
 pacman-key --populate archlinux
+# conservar la identidad maospix-kde aunque se actualice el paquete filesystem
+sed -i 's|^#NoUpgrade   =.*|NoUpgrade = usr/lib/os-release etc/lsb-release|' /etc/pacman.conf
