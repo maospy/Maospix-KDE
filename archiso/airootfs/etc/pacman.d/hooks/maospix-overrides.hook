@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = filesystem
+Target = lsb-release
+Target = plasma-desktop
+Target = plasma-workspace
+
+[Action]
+Description = Aplicando archivos propios de Maospix-KDE...
+When = PostTransaction
+Exec = /usr/bin/bash /usr/local/bin/maospix-overrides

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Reaplica los archivos propios que pisan a los de paquetes (os-release, panel de Plasma)
+cp -a /usr/share/maospix/overrides/. /
