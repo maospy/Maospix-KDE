@@ -12,4 +12,4 @@ passwd -l root
 pacman-key --init
 pacman-key --populate archlinux
 # conservar la identidad maospix-kde aunque se actualice el paquete filesystem
-sed -i 's|^#NoUpgrade   =.*|NoUpgrade = usr/lib/os-release etc/lsb-release|' /etc/pacman.conf
+sed -i 's|^#NoUpgrade   =.*|NoUpgrade = usr/lib/os-release etc/lsb-release usr/share/plasma/layout-templates/org.kde.plasma.desktop.defaultPanel/* usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/layouts/*|' /etc/pacman.conf
