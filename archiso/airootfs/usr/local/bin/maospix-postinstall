@@ -11,3 +11,4 @@ find /etc/systemd/system -xtype l -delete
 passwd -l root
 pacman-key --init
 pacman-key --populate archlinux
+rm -rf /home/liveuser

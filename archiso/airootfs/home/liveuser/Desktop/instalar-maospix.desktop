@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Instalar Maospix-KDE
+Name[es]=Instalar Maospix-KDE
+Comment=Instalar el sistema en el disco
+Exec=sh -c "pkexec calamares"
+Icon=calamares
+Terminal=false
+Categories=System;

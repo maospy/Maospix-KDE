@@ -26,5 +26,7 @@ file_permissions=(
   ["/etc/sudoers.d"]="0:0:750"
   ["/etc/sudoers.d/g_wheel"]="0:0:440"
   ["/home/liveuser"]="1000:1000:750"
+  ["/home/liveuser/Desktop"]="1000:1000:755"
+  ["/home/liveuser/Desktop/instalar-maospix.desktop"]="1000:1000:755"
   ["/usr/local/bin/maospix-postinstall"]="0:0:755"
 )
