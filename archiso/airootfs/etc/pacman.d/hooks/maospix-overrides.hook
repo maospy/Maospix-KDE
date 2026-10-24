@@ -6,6 +6,7 @@ Target = filesystem
 Target = lsb-release
 Target = plasma-desktop
 Target = plasma-workspace
+Target = bash
 
 [Action]
 Description = Aplicando archivos propios de Maospix-KDE...
