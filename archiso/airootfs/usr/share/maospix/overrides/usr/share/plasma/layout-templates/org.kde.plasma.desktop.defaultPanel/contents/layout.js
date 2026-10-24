@@ -27,7 +27,7 @@ panel.addWidget("org.kde.plasma.pager")
 var tasks = panel.addWidget("org.kde.plasma.icontasks")
 tasks.currentConfigGroup = ["General"]
 tasks.writeConfig("launchers", [
-    "applications:com.mitchellh.ghostty.desktop",
+    "applications:maospix-terminal.desktop",
     "applications:org.kde.dolphin.desktop",
     "applications:brave-browser.desktop",
     "applications:systemsettings.desktop"

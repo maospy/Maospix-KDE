@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Terminal de Maospix: Ghostty, con Konsole como respaldo si falla (p. ej. sin OpenGL 4.3)
+if systemd-detect-virt -q 2>/dev/null; then
+  export LIBGL_ALWAYS_SOFTWARE=1
+fi
+inicio=$(date +%s)
+ghostty --gtk-single-instance=false "$@"
+rc=$?
+if [ "$rc" -ne 0 ] && [ $(( $(date +%s) - inicio )) -lt 5 ]; then
+  exec konsole "$@"
+fi
+exit "$rc"

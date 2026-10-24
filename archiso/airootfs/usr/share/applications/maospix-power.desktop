@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Apagar
+Name[es]=Apagar
+Comment=Apagar, reiniciar o cerrar sesion
+Exec=qdbus6 org.kde.LogoutPrompt /LogoutPrompt promptAll
+Icon=system-shutdown
+Terminal=false
+Categories=System;

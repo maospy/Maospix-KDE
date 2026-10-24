@@ -29,7 +29,9 @@ file_permissions=(
   ["/home/liveuser/Desktop"]="1000:1000:755"
   ["/home/liveuser/.config"]="1000:1000:755"
   ["/home/liveuser/.config/ghostty"]="1000:1000:755"
+  ["/home/liveuser/.config/brave-flags.conf"]="1000:1000:644"
   ["/home/liveuser/.config/ghostty/config"]="1000:1000:644"
   ["/home/liveuser/Desktop/instalar-maospix.desktop"]="1000:1000:755"
   ["/usr/local/bin/maospix-postinstall"]="0:0:755"
+  ["/usr/local/bin/maospix-terminal"]="0:0:755"
 )

@@ -3,5 +3,5 @@ LookAndFeelPackage=org.maospix.dark
 
 [General]
 BrowserApplication=brave-browser
-TerminalApplication=ghostty
-TerminalService=com.mitchellh.ghostty.desktop
+TerminalApplication=maospix-terminal
+TerminalService=maospix-terminal.desktop
