@@ -38,3 +38,11 @@ tasks.writeConfig("launchers", [
     "applications:firefox.desktop",
     "applications:systemsettings.desktop"
 ]);
+dock.addWidget("org.kde.plasma.marginsseparator");
+dock.addWidget("org.kde.plasma.trash");
+var power = dock.addWidget("org.kde.plasma.lock_logout");
+power.currentConfigGroup = ["General"];
+power.writeConfig("show_lockScreen", true);
+power.writeConfig("show_requestLogout", true);
+power.writeConfig("show_requestReboot", true);
+power.writeConfig("show_requestShutDown", true);
