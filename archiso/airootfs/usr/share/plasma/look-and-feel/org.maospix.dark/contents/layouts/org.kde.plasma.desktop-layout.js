@@ -24,7 +24,7 @@ top.addWidget("org.kde.plasma.systemtray");
 
 // --- Dock flotante ---
 var dock = new Panel;
-dock.location = "bottom";
+dock.location = "left";
 dock.height = 2 * Math.ceil(gridUnit * 3 / 2);
 dock.floating = true;
 dock.opacity = "translucent";
