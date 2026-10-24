@@ -34,4 +34,7 @@ file_permissions=(
   ["/home/liveuser/Desktop/instalar-maospix.desktop"]="1000:1000:755"
   ["/usr/local/bin/maospix-postinstall"]="0:0:755"
   ["/usr/local/bin/maospix-terminal"]="0:0:755"
+  ["/usr/local/bin/maospix-postboot"]="0:0:755"
+  ["/usr/local/bin/maospix-hello"]="0:0:755"
+  ["/usr/local/bin/maospix-nvidia"]="0:0:755"
 )

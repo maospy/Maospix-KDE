@@ -41,6 +41,7 @@ tasks.writeConfig("launchers", [
     "applications:maospix-terminal.desktop",
     "applications:org.kde.dolphin.desktop",
     "applications:brave-browser.desktop",
+    "applications:org.kde.discover.desktop",
     "applications:systemsettings.desktop",
     "applications:maospix-power.desktop"
 ]);

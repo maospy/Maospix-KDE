@@ -14,5 +14,5 @@ pacman-key --populate archlinux
 rm -rf /home/liveuser
 # el instalador no se queda en el sistema instalado
 pacman -Rns --noconfirm calamares || true
-rm -rf /etc/calamares /etc/xdg/plasma-welcomerc
+rm -rf /etc/calamares
 rm -f /usr/local/bin/maospix-postinstall

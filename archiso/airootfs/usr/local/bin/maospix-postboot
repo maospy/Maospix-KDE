@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Corre en chroot al final de la instalacion, despues del bootloader
+if [ "$(findmnt -no FSTYPE /)" = "btrfs" ]; then
+  snapper --no-dbus -c root create-config / || true
+  snapper --no-dbus -c root set-config TIMELINE_CREATE=no NUMBER_LIMIT=8 NUMBER_LIMIT_IMPORTANT=4 || true
+  systemctl enable snapper-cleanup.timer grub-btrfsd.service || true
+  grub-mkconfig -o /boot/grub/grub.cfg || true
+fi
+exit 0

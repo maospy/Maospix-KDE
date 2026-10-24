@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Maospix Hello: bienvenida con accesos rapidos
+bandera="$HOME/.config/maospix-hello-done"
+while true; do
+  op=$(kdialog --title "Maospix Hello" --menu "Bienvenido a Maospix-KDE\nArch Linux + KDE Plasma, listo para usar.\n\nElegi una opcion:" \
+    update "Actualizar el sistema" \
+    store "Abrir la tienda de aplicaciones" \
+    nvidia "Instalar controladores NVIDIA" \
+    settings "Abrir la configuracion del sistema" \
+    web "Sitio del proyecto (GitHub)" \
+    done "Cerrar y no volver a mostrar") || break
+  case "$op" in
+    update)   maospix-terminal -e bash -c "sudo pacman -Syu; echo; read -rp 'Listo. Enter para cerrar'" ;;
+    store)    gtk-launch org.kde.discover >/dev/null 2>&1 || plasma-discover & ;;
+    nvidia)   maospix-nvidia ;;
+    settings) systemsettings & ;;
+    web)      xdg-open https://github.com/maospy >/dev/null 2>&1 & ;;
+    done)     mkdir -p "$HOME/.config"; touch "$bandera"; break ;;
+  esac
+done

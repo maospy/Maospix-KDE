@@ -88,7 +88,6 @@ usb_modeswitch
 usbmuxd
 usbutils
 vim
-virtualbox-guest-utils-nox
 wireless-regdb
 wireless_tools
 wpa_supplicant
@@ -170,3 +169,13 @@ brave-bin
 cliamp-bin
 ghostty
 pacman-contrib
+
+# --- maospix-kde: v7 ---
+virtualbox-guest-utils
+zram-generator
+snapper
+snap-pac
+grub-btrfs
+btrfs-assistant
+discover
+kdialog

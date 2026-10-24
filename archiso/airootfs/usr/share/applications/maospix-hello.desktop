@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Maospix Hello
+Comment=Bienvenida y accesos rapidos de Maospix-KDE
+Exec=maospix-hello
+Icon=start-here-kde
+Terminal=false
+Categories=System;

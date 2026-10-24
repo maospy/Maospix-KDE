@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Instala los controladores NVIDIA si se detecta una placa NVIDIA
+if ! lspci -nn | grep -qi nvidia; then
+  kdialog --title "NVIDIA" --msgbox "No se detecto ninguna placa NVIDIA en este equipo."
+  exit 0
+fi
+kdialog --title "NVIDIA" --yesno "Se detecto una placa NVIDIA.\n\nSe instalaran los controladores abiertos (nvidia-open), para placas GTX 16 / RTX o mas nuevas. En placas mas viejas conviene seguir con el controlador libre por defecto.\n\nRequiere internet. ¿Continuar?" || exit 0
+maospix-terminal -e bash -c "sudo pacman -S --needed nvidia-open nvidia-utils nvidia-settings; echo; read -rp 'Listo. Reinicia el equipo. Enter para cerrar'"
