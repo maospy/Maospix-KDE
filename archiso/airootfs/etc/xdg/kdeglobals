@@ -1,2 +1,5 @@
 [KDE]
 LookAndFeelPackage=org.maospix.dark
+
+[General]
+BrowserApplication=brave-browser

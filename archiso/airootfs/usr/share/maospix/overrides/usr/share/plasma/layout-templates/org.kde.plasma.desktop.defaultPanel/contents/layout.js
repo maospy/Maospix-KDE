@@ -29,7 +29,7 @@ tasks.currentConfigGroup = ["General"]
 tasks.writeConfig("launchers", [
     "applications:org.kde.konsole.desktop",
     "applications:org.kde.dolphin.desktop",
-    "applications:firefox.desktop",
+    "applications:brave-browser.desktop",
     "applications:systemsettings.desktop"
 ])
 panel.addWidget("org.kde.plasma.marginsseparator")

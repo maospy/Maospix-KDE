@@ -102,7 +102,6 @@ dolphin
 kate
 ark
 spectacle
-firefox
 networkmanager
 network-manager-applet
 pipewire
@@ -167,3 +166,5 @@ tesseract-data-eng
 plasma-welcome
 papirus-icon-theme
 ttf-jetbrains-mono
+brave-bin
+cliamp-bin
