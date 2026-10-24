@@ -1,0 +1,21 @@
+[Desktop Entry]
+DefaultProfile=Maospix.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+ShowWindowTitleOnTitleBar=false
+
+[MainWindow]
+MenuBar=Disabled
+StatusBar=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+Hidden=true
+
+[MainWindow][Toolbar sessionToolbar]
+Hidden=true
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded
+NewTabButton=false
+CloseTabButton=None

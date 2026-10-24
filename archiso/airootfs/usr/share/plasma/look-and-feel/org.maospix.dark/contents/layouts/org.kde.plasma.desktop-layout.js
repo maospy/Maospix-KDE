@@ -11,7 +11,7 @@ for (var j = 0; j < desktopsArray.length; j++) {
 var top = new Panel;
 top.location = "top";
 top.height = 2 * Math.ceil(gridUnit * 1.6 / 2);
-top.floating = false;
+top.floating = true;
 top.opacity = "translucent";
 top.addWidget("org.kde.plasma.kickoff");
 top.addWidget("org.kde.plasma.panelspacer");
