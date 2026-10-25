@@ -11,8 +11,14 @@ DST = "archiso/airootfs/usr/share/wallpapers/Maospix%s/contents/images/1920x1080
 SHIELD = "assets/logo/maospix-escudo.svg"
 BOX = (80, 390, 800, 780)          # x0, y0, x1, y1 del bloque de texto con su brillo
 BOX_MAIN_X1 = 758                  # en el principal, las lineas del gato empiezan en x=745
-SCALE, NEWX, NEWY = 0.72, 215, 490  # tamaño y posicion nuevos del bloque
-SH_H, SH_Y = 190, 255              # alto y posicion del escudo
+# Composicion: escudo a la izquierda, "MAOSPIX / KDE" a su derecha y el lema debajo.
+SX, SH_Y, SH_H = 200, 470, 160      # escudo: x, y, alto
+# piezas del bloque original: (fila0, fila1, escala, x destino del texto, y destino de la fila0)
+PIECES = [
+    (400, 676, 0.62, SX + 125 + 28, 458),   # MAOSPIX + KDE
+    (705, 780, 0.80, SX, 641),              # ARCH | PLASMA | LIBRE (la barra se descarta)
+]
+ORIG_TEXT_X = 135                   # borde izquierdo del texto original
 
 
 def low_fill(a, robust=False):
@@ -71,16 +77,21 @@ def build(name, grid):
     orig = np.array(Image.open(SRC % name).convert("RGB"))
     clean_img = clean(orig, grid)
     x0, y0, x1, y1 = BOX
-    delta = orig[y0:y1, x0:x1].astype(np.int16) - clean_img[y0:y1, x0:x1].astype(np.int16)
-    w, h = round((x1 - x0) * SCALE), round((y1 - y0) * SCALE)
-    delta = cv2.resize(delta.astype(np.float32), (w, h), interpolation=cv2.INTER_AREA)
     out = clean_img.astype(np.float32)
-    out[NEWY:NEWY + h, NEWX:NEWX + w] += delta
+    for r0, r1, sc, tx, ty in PIECES:
+        delta = orig[r0:r1, x0:x1].astype(np.int16) - clean_img[r0:r1, x0:x1].astype(np.int16)
+        if not grid:  # solo el texto y su brillo, no las diferencias del fondo (plantas)
+            tm = (delta.sum(2) > 130).astype(np.uint8)
+            tm = cv2.dilate(tm, np.ones((3, 3), np.uint8), iterations=12)
+            delta = np.maximum(delta, 0) * cv2.GaussianBlur(tm.astype(np.float32), (0, 0), 6)[..., None]
+        w, h = round((x1 - x0) * sc), round((r1 - r0) * sc)
+        delta = cv2.resize(delta.astype(np.float32), (w, h), interpolation=cv2.INTER_AREA)
+        nx = round(tx - (ORIG_TEXT_X - x0) * sc)
+        out[ty:ty + h, nx:nx + w] += delta
     img = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
     sh = shield_img()
-    sx = NEWX + round((140 - x0 + 80) * 0) + 40   # alineado con el borde del texto
     glow = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    glow.paste(sh, (sx, SH_Y), sh)
+    glow.paste(sh, (SX, SH_Y), sh)
     g = glow.filter(ImageFilter.GaussianBlur(14))
     img = Image.alpha_composite(img.convert("RGBA"), g)
     img = Image.alpha_composite(img, glow)
