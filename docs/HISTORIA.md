@@ -53,7 +53,7 @@ Autor: Marcos Olmedo (maospytek), Itauguá, Paraguay. Base: Arch Linux + KDE Pla
 
 ### 3.7 Terminal, shell y programas
 - Terminal por defecto: Ghostty con tema Nord y JetBrains Mono (config en /etc/skel y en liveuser). `maospix-terminal` es un script que abre Ghostty y cae a Konsole si falla.
-- fastfetch se ejecuta al abrir la terminal (override de /etc/bash.bashrc). Logo: el escudo de Maospix (diseño de Marcos), en `assets/logo/maospix-escudo.svg`; `tools/gen-fastfetch-logo.py` lo convierte a caracteres de colores.
+- fastfetch se ejecuta al abrir la terminal (override de /etc/bash.bashrc). Logo: el escudo de Maospix (diseño de Marcos), en `assets/logo/maospix-escudo.svg`; `tools/gen-ascii-logo.py` lo convierte en un logo de texto (estilo Arch, con el gatito dibujado a mano).
 - Brave como navegador por defecto (Firefox quitado). cliamp como reproductor en terminal.
 - paccache.timer limpia la caché de pacman cada semana.
 - Maospix Hello: ventana de bienvenida en el primer inicio del sistema instalado (actualizar, tienda, instalar NVIDIA, configuración, sitio web, no mostrar más). La bienvenida de KDE queda oculta.
