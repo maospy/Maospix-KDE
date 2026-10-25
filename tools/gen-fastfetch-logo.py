@@ -6,7 +6,14 @@ from PIL import Image
 R = "archiso/airootfs/usr/share/maospix/"
 png = subprocess.run(["rsvg-convert", "-w", "320", "-h", "320", R + "maospix-logo.svg"],
                      capture_output=True, check=True).stdout
-img = Image.open(io.BytesIO(png)).convert("RGBA").resize((40, 40), Image.BOX)
+img = Image.open(io.BytesIO(png)).convert("RGBA")
+img = img.crop(img.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox())
+h = 40
+w = max(1, round(img.width * h / img.height))
+img = img.resize((w, h), Image.BOX)
+canvas = Image.new("RGBA", (40, 40), (0, 0, 0, 0))
+canvas.paste(img, ((40 - w) // 2, 0))
+img = canvas
 px = img.load()
 def get(x, y):
     r, g, b, a = px[x, y]

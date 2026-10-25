@@ -1,28 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
-  <title>Maospix-KDE - gatito</title>
-  <!-- Logo editable de Maospix: colores Nord. Fuente de fastfetch-logo.ans (tools/gen-fastfetch-logo.py) -->
-  <g fill="#88C0D0">
-    <polygon points="62,175 78,30 185,100"/>
-    <polygon points="338,175 322,30 215,100"/>
-    <ellipse cx="200" cy="235" rx="160" ry="125"/>
-  </g>
-  <g fill="#5E81AC">
-    <polygon points="100,140 100,80 148,112"/>
-    <polygon points="300,140 300,80 252,112"/>
-  </g>
-  <g fill="#2E3440">
-    <ellipse cx="140" cy="220" rx="24" ry="32"/>
-    <ellipse cx="260" cy="220" rx="24" ry="32"/>
-    <polygon points="182,268 218,268 200,288"/>
-  </g>
-  <g fill="#ECEFF4">
-    <circle cx="149" cy="208" r="9"/>
-    <circle cx="269" cy="208" r="9"/>
-  </g>
-  <g fill="none" stroke="#2E3440" stroke-width="6" stroke-linecap="round">
-    <path d="M200 288 Q188 312 164 302"/>
-    <path d="M200 288 Q212 312 236 302"/>
-    <path d="M70 250 L118 256"/><path d="M70 278 L118 272"/>
-    <path d="M330 250 L282 256"/><path d="M330 278 L282 272"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Maospix - escudo</title>
+  <!-- Escudo de Maospix (diseño de Marcos Olmedo), colores adaptados a la paleta Nord -->
+  <path d="M256 37 428 113v156q-4 129-172 210Q88 398 84 269V113Z" fill="#1F2633" stroke="#88C0D0" stroke-width="14"/>
+  <path d="M149 214 147 139 207 177 Q255 161 305 177 L365 139 363 215 Q378 259 351 322 Q330 364 256 378 Q182 364 161 322 Q134 259 149 214Z" fill="#2E3A4E" stroke="#B48EAD" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M197 264 223 281 191 288 M315 264 289 281 321 288" fill="none" stroke="#88C0D0" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="m239 316 17 12 17-12" fill="none" stroke="#D08770" stroke-width="11" stroke-linecap="round"/>
+  <path d="M205 213 256 257 307 213" stroke="#81A1C1" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
