@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Maospix Hello
-Exec=sh -c '[ "$USER" = liveuser ] || [ -e "$HOME/.config/maospix-hello-done" ] || maospix-hello'
+Exec=sh -c '[ "$(id -un)" = liveuser ] || [ -d /run/archiso ] || [ -e "$HOME/.config/maospix-hello-done" ] || maospix-hello'
 Icon=start-here-kde
 OnlyShowIn=KDE;
 X-KDE-autostart-after=panel
