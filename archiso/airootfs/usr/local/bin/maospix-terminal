@@ -3,6 +3,8 @@
 if systemd-detect-virt -q 2>/dev/null; then
   export LIBGL_ALWAYS_SOFTWARE=1
 fi
+# el propio script suma un nivel de SHLVL: se resta para que fastfetch salga al abrir la terminal
+export SHLVL=0
 inicio=$(date +%s)
 ghostty --gtk-single-instance=false "$@"
 rc=$?
