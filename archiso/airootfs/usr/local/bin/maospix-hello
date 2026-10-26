@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 # Maospix Hello: bienvenida con accesos rapidos
 bandera="$HOME/.config/maospix-hello-done"
-# se muestra una sola vez: se marca apenas abre (cerrar la ventana tambien cuenta); luego queda en el menu de apps
-mkdir -p "$HOME/.config"; touch "$bandera"
+if [ "$1" = "--autostart" ]; then
+  # al iniciar sesion: solo en el primer inicio del sistema instalado, nunca en el live
+  [ "$(id -un)" = liveuser ] || [ -d /run/archiso ] || [ -e "$bandera" ] && exit 0
+  mkdir -p "$HOME/.config"; touch "$bandera"
+fi
 while true; do
   op=$(kdialog --title "Maospix Hello" --menu "Bienvenido a Maospix-KDE\nArch Linux + KDE Plasma, listo para usar.\n\nElegi una opcion:" \
     update "Actualizar el sistema" \
     store "Abrir la tienda de aplicaciones" \
     nvidia "Instalar controladores NVIDIA" \
     settings "Abrir la configuracion del sistema" \
-    web "Sitio del proyecto (GitHub)" \
-    done "Cerrar (no vuelve a aparecer al iniciar)") || break
+    web "Sitio del proyecto (GitHub)") || break
   case "$op" in
     update)   maospix-terminal -e bash -c "sudo pacman -Syu; echo; read -rp 'Listo. Enter para cerrar'" ;;
     store)    gtk-launch org.kde.discover >/dev/null 2>&1 || plasma-discover & ;;
     nvidia)   maospix-nvidia ;;
     settings) systemsettings & ;;
     web)      xdg-open https://github.com/maospy >/dev/null 2>&1 & ;;
-    done)     break ;;
   esac
 done
