@@ -7,3 +7,6 @@ window-padding-y = 10
 gtk-titlebar = false
 confirm-close-surface = false
 copy-on-select = clipboard
+
+command = /usr/bin/fish
+maximize = true
