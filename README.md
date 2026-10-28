@@ -17,7 +17,13 @@ Distro propia basada en **Arch Linux + KDE Plasma**, con instalador gráfico (Ca
 
 ## Instalar
 
-1. Descargá la ISO desde la sección *Releases*.
+1. Descargá la ISO (3 GB) desde [SourceForge](https://sourceforge.net/projects/maospy-kde/files/maospix-kde-2026.10.26-x86_64.iso/download) y verificá el checksum:
+
+```
+sha256sum maospix-kde-2026.10.26-x86_64.iso
+3abc2a34066c54745ed27afca1e6bc62e22cd407ba93d07e811c2c61f8df7873
+```
+
 2. Grabala en un pendrive (Ventoy, `dd` o Balena Etcher) o usala en una VM con **EFI activado**.
 3. Arrancá el live y abrí "Instalar Maospix-KDE".
 
